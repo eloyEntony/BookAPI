@@ -1,1 +1,3 @@
 /.vs
+/BookStore/obj
+/BookStore/bin/Debug/netcoreapp3.1
