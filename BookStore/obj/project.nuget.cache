@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "tj/4Mz5D8lXqEtm+5k1GhmCDMQ4K8l0h0VhMaHpl/WCRHX54/qd2TQnvRo1GkDKQVL8rKVRHrs+Fbwht64LoPQ==",
+  "dgSpecHash": "0cR1w5IWdxbc/e3qR9d71/pzT6UGxlv6vzTbrilOIR8uE5U1zGir2GgGmTTcasdiNcmQcY2tiVsmXG/Jy9Y5/w==",
   "success": true,
   "projectFilePath": "C:\\Users\\Anton\\Cod\\BookApi\\BookStore\\BookStore.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Anton\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.14\\microsoft.aspnetcore.authentication.jwtbearer.3.1.14.nupkg.sha512",
     "C:\\Users\\Anton\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.14\\microsoft.aspnetcore.cryptography.internal.3.1.14.nupkg.sha512",
     "C:\\Users\\Anton\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.14\\microsoft.aspnetcore.cryptography.keyderivation.3.1.14.nupkg.sha512",
     "C:\\Users\\Anton\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

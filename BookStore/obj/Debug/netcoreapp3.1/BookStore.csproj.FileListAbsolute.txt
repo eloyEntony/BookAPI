@@ -405,3 +405,4 @@ C:\Users\Anton\Cod\BookApi\BookStore\obj\Debug\netcoreapp3.1\scopedcss\bundle\Bo
 C:\Users\Anton\Cod\BookApi\BookStore\obj\Debug\netcoreapp3.1\BookStore.RazorTargetAssemblyInfo.cache
 C:\Users\Anton\Cod\BookApi\BookStore\obj\Debug\netcoreapp3.1\BookStore.csproj.CopyComplete
 C:\Users\Anton\Cod\BookApi\BookStore\obj\Debug\netcoreapp3.1\BookStore.genruntimeconfig.cache
+C:\Users\Anton\Cod\BookApi\BookStore\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll

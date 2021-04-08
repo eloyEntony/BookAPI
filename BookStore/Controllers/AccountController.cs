@@ -2,6 +2,7 @@
 using BookStore.Models.Dto;
 using BookStore.Models.Dto.ResultDto;
 using BookStore.Models.Entities;
+using BookStore.Services.Interface;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -19,14 +20,17 @@ namespace BookStore.Controllers
         private readonly ApplicationContext _context;
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
+        private readonly IJwtTokenService _jwtTokenService;
 
         public AccountController(ApplicationContext context,
                                  UserManager<User> userManager,
-                                 SignInManager<User> signInManager)
+                                 SignInManager<User> signInManager,
+                                 IJwtTokenService jwtTokenService)
         {
             _userManager = userManager;
             _context = context;
             _signInManager = signInManager;
+            _jwtTokenService = jwtTokenService;
         }
 
 
@@ -43,15 +47,14 @@ namespace BookStore.Controllers
 
             UserInfo ui = new UserInfo() { Id = user.Id, Age = newR.Age, FullName = newR.FullName, Image = newR.Image };
 
+            //var result = _userManager.AddToRoleAsync(user, "Guest").Result;
+
             await _userManager.CreateAsync(user, newR.Password);
 
             await _context.UserInfos.AddAsync(ui);
             await _context.SaveChangesAsync();
 
-
-
-
-            return new ResultDto { IsSuccessful = true, Message = "work" };
+            return new ResultDto { IsSuccessful = true, Message = "register good" };
         }
 
         [HttpPost("login")]
@@ -66,12 +69,12 @@ namespace BookStore.Controllers
             var user = await _userManager.FindByEmailAsync(model.Email);
             await _signInManager.SignInAsync(user, isPersistent: false);
 
-            return new ResultDto() { IsSuccessful = true, Message = "good" };
-            //return new ResultLoginDto
-            //{
-            //    IsSuccessful = true,
-            //    Token = _jwtTokenService.CreateToken(user)
-            //};
+            //return new ResultDto() { IsSuccessful = true, Message = "good" };
+            return new ResultLoginDTO
+            {
+                IsSuccessful = true,
+                Token = _jwtTokenService.CreateToken(user)
+            };
         }
 
     }
